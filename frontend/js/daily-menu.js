@@ -616,6 +616,68 @@ class DailyMenuManager {
     menuGrid.innerHTML = todayMenu.map(dish => this.createDishCard(dish)).join('');
   }
 
+  filterByDietary(filterType) {
+    const menuGrid = document.querySelector('.menu-grid');
+    if (!menuGrid) {
+      console.log('Menu grid not found');
+      return;
+    }
+
+    const todayMenu = this.getTodayMenu();
+    let filteredMenu = [];
+
+    switch(filterType) {
+      case 'vegan':
+        filteredMenu = todayMenu.filter(dish => dish.vegan);
+        break;
+      case 'gluten':
+        filteredMenu = todayMenu.filter(dish => dish.gluten_free);
+        break;
+      case 'lactose':
+        filteredMenu = todayMenu.filter(dish => dish.lactose_free);
+        break;
+      default:
+        filteredMenu = todayMenu;
+    }
+
+    if (filteredMenu.length === 0) {
+      menuGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #7f8c8d;">
+          <h3>Ei ruokalajia löytynyt</h3>
+          <p>Valitulla suodattimella ei löytynyt ruokalajeja.</p>
+        </div>
+      `;
+      return;
+    }
+
+    menuGrid.innerHTML = filteredMenu.map(dish => this.createDishCard(dish)).join('');
+  }
+
+  filterByAllergens(excludedAllergens) {
+    const menuGrid = document.querySelector('.menu-grid');
+    if (!menuGrid) {
+      console.log('Menu grid not found');
+      return;
+    }
+
+    const todayMenu = this.getTodayMenu();
+    const filteredMenu = todayMenu.filter(dish => {
+      return !excludedAllergens.some(allergen => dish.allergens.includes(allergen));
+    });
+
+    if (filteredMenu.length === 0) {
+      menuGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #7f8c8d;">
+          <h3>Ei ruokalajia löytynyt</h3>
+          <p>Valitulla suodattimella ei löytynyt ruokalajeja.</p>
+        </div>
+      `;
+      return;
+    }
+
+    menuGrid.innerHTML = filteredMenu.map(dish => this.createDishCard(dish)).join('');
+  }
+
   createDishCard(dish) {
     const badges = [];
     if (dish.vegan) badges.push('<span class="badge vegan">Vegaani</span>');

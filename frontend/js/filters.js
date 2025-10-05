@@ -61,16 +61,16 @@ class FilterManager {
 
     if (activeFilters.length === 0) {
       // No dietary filters active, show all items
-      if (window.menuManager) {
-        window.menuManager.renderMenu();
+      if (window.dailyMenuManager) {
+        window.dailyMenuManager.renderTodayMenu();
       }
       return;
     }
 
     // Apply first active filter (can be extended to support multiple)
     const firstFilter = activeFilters[0];
-    if (window.menuManager) {
-      window.menuManager.filterByDietary(firstFilter);
+    if (window.dailyMenuManager) {
+      window.dailyMenuManager.filterByDietary(firstFilter);
     }
   }
 
@@ -105,8 +105,8 @@ class FilterManager {
     });
 
     // Apply allergen filters
-    if (excludedAllergens.length > 0 && window.menuManager) {
-      window.menuManager.filterByAllergens(excludedAllergens);
+    if (excludedAllergens.length > 0 && window.dailyMenuManager) {
+      window.dailyMenuManager.filterByAllergens(excludedAllergens);
     } else {
       // Apply dietary filters if no allergen filters
       this.applyDietaryFilters();
@@ -130,8 +130,8 @@ class FilterManager {
     this.updateAllergenPills();
 
     // Show all menu items
-    if (window.menuManager) {
-      window.menuManager.clearFilters();
+    if (window.dailyMenuManager) {
+      window.dailyMenuManager.renderTodayMenu();
     }
   }
 

@@ -91,87 +91,7 @@
   </header>
 
   <main class="container">
-    <section class="filters-section">
-      <div class="filters-container">
-        <h3 class="filters-title">Suodata ruokalistaa</h3>
-        
-        <div class="dietary-filters">
-          <h4 class="filter-category">Ruokavalio</h4>
-          <div class="filter-options">
-            <label class="filter-option">
-              <input type="checkbox" id="filter-vegan" />
-              <span class="checkmark"></span>
-              <span class="option-text">Vegaani</span>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" id="filter-gluten" />
-              <span class="checkmark"></span>
-              <span class="option-text">Gluteeniton</span>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" id="filter-lactose" />
-              <span class="checkmark"></span>
-              <span class="option-text">Laktoositon</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="allergen-filters">
-          <h4 class="filter-category">Allergeenit</h4>
-          <div class="allergen-options">
-            <label class="allergen-option" data-allergen="nuts">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Pähkinät</span>
-            </label>
-            <label class="allergen-option" data-allergen="fish">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Kala</span>
-            </label>
-            <label class="allergen-option" data-allergen="milk">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Maito</span>
-            </label>
-            <label class="allergen-option" data-allergen="eggs">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Kananmuna</span>
-            </label>
-            <label class="allergen-option" data-allergen="soy">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Soija</span>
-            </label>
-            <label class="allergen-option" data-allergen="gluten">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Gluteeni</span>
-            </label>
-            <label class="allergen-option" data-allergen="sesame">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Seesami</span>
-            </label>
-            <label class="allergen-option" data-allergen="shellfish">
-              <input type="checkbox" class="allergen-checkbox" />
-              <span class="allergen-pill">Äyriäiset</span>
-            </label>
-          </div>
-          <small class="allergen-hint">Valitse allergeenit jotka haluat välttää</small>
-        </div>
-
-        <div class="filter-actions">
-          <button id="applyFilters" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3"></polygon>
-            </svg>
-            Käytä suodattimet
-          </button>
-          <button id="clearFilters" class="btn btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            Tyhjennä
-          </button>
-        </div>
-      </div>
-    </section>
+  
 
     <section id="promotions" class="promotions"></section>
 
@@ -288,6 +208,87 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="filters-section">
+      <div class="filters-container">
+        <h3 class="filters-title">Suodata ruokalistaa</h3>
+        
+        <div class="dietary-filters">
+          <h4 class="filter-category">Ruokavalio</h4>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" id="filter-vegan" />
+              <span class="checkmark"></span>
+              <span class="option-text">Vegaani</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" id="filter-gluten" />
+              <span class="checkmark"></span>
+              <span class="option-text">Gluteeniton</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" id="filter-lactose" />
+              <span class="checkmark"></span>
+              <span class="option-text">Laktoositon</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="allergen-filters">
+          <h4 class="filter-category">Allergeenit</h4>
+          <div class="allergen-options">
+            <label class="allergen-option" data-allergen="nuts">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Pähkinät</span>
+            </label>
+            <label class="allergen-option" data-allergen="fish">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Kala</span>
+            </label>
+            <label class="allergen-option" data-allergen="milk">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Maito</span>
+            </label>
+            <label class="allergen-option" data-allergen="eggs">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Kananmuna</span>
+            </label>
+            <label class="allergen-option" data-allergen="soy">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Soija</span>
+            </label>
+            <label class="allergen-option" data-allergen="gluten">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Gluteeni</span>
+            </label>
+            <label class="allergen-option" data-allergen="sesame">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Seesami</span>
+            </label>
+            <label class="allergen-option" data-allergen="shellfish">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Äyriäiset</span>
+            </label>
+          </div>
+          <small class="allergen-hint">Valitse allergeenit jotka haluat välttää</small>
+        </div>
+
+        <div class="filter-actions">
+          <button id="applyFilters" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3"></polygon>
+            </svg>
+            Käytä suodattimet
+          </button>
+          <button id="clearFilters" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            Tyhjennä
+          </button>
         </div>
       </div>
     </section>
