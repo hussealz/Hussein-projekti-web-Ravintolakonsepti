@@ -4,7 +4,7 @@ const router = express.Router();
 const { users, JWT_SECRET } = require('./shared');
 const jwt = require('jsonwebtoken');
 
-// تسجيل مستخدم جديد
+// Register new user
 router.post('/', (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) return res.status(400).json({ error: 'Kaikki kentät ovat pakollisia' });

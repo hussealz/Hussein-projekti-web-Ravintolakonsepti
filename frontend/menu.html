@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruokalista - Apricus</title>
+  <meta name="description" content="Apricus ruokalista - autenttista Lähi-idän ruokaa">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+</head>
+<body dir="ltr" class="page">
+  <header class="custom-header">
+    <div class="header-logo-brand">
+      <img src="assets/img/logo.png" alt="Logo" class="header-logo" />
+      <span class="header-brand">Apricus</span>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">Etusivu</a>
+      <a href="index.html#about" class="nav-link">Tietoa</a>
+      <a href="menu.html" class="nav-link active">Ruokalista</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" id="headerSearch" placeholder="Hae ruokalajia..." aria-label="Hae ruokalajia" />
+        <span class="search-icon">
+          <svg width="20" height="20" fill="none" stroke="#e1701a" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <div class="search-dropdown" id="searchDropdown">
+          <!-- Search results will be populated here -->
+        </div>
+      </div>
+      <button class="cart-btn" id="cartBtn" aria-label="Ostoskori">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="menu-section">
+
+      <!-- Weekly Menu View -->
+      <div id="weeklyMenuView" class="menu-view active">
+        <div class="weekly-menu-container">
+          <div class="weekly-menu-header">
+            <h2 class="weekly-menu-title">Viikon Menu</h2>
+            <p class="weekly-menu-subtitle">Katso koko viikon ruokalista etukäteen</p>
+          </div>
+          
+          <div class="weekly-menu-grid" id="weeklyMenuGrid">
+            <!-- Weekly menu will be populated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Apricus</h3>
+        <p>Autenttista Lähi-idän ruokaa Helsingissä</p>
+      </div>
+      <div class="footer-section">
+        <h3>Yhteystiedot</h3>
+        <p>Osoite: Helsinki, Suomi</p>
+        <p>Puhelin: +358 40 123 4567</p>
+        <p>Sähköposti: info@apricus.fi</p>
+      </div>
+      <div class="footer-section">
+        <h3>Aukioloajat</h3>
+        <p>Ma-Pe: 11:00 - 22:00</p>
+        <p>La: 12:00 - 23:00</p>
+        <p>Su: 12:00 - 21:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Apricus. Kaikki oikeudet pidätetään.</div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/weekly-menu.js"></script>
+  <script src="js/menu-navigation.js"></script>
+</body>
+</html>

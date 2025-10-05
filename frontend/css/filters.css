@@ -1,0 +1,363 @@
+/* Filters Section Styles */
+
+/* Modern filters section */
+.new-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #fff 60%, #fbeee7 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(234,193,122,0.10);
+  padding: 22px 32px 16px 32px;
+  margin-bottom: 28px;
+  gap: 32px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.filter-label {
+  font-size: 1.08em;
+  color: #a67c1a;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+#exclude-allergens {
+  border-radius: 8px;
+  border: 1.5px solid #eac17a;
+  padding: 6px 10px;
+  background: #fdf6e9;
+  font-size: 1.05rem;
+  color: #a67c1a;
+  box-shadow: 0 1.5px 6px 0 rgba(234,193,122,0.08);
+}
+
+.filter-btn {
+  background: linear-gradient(90deg, #eac17a 60%, #fff 100%);
+  color: #a67c1a;
+  font-weight: bold;
+  border-radius: 12px;
+  border: 1.5px solid #eac17a;
+  padding: 12px 28px;
+  font-size: 1.13em;
+  box-shadow: 0 2px 12px #eac17a55;
+  transition: background 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+  background: #eac17a;
+  color: #fff;
+}
+
+/* Filters Section */
+.filters-section {
+  margin-bottom: 32px;
+}
+
+.filters-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 32px;
+  border: 1px solid rgba(234, 193, 122, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.filters-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e1701a, #eac17a, #f39c12);
+}
+
+.filters-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.filter-category {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.dietary-filters {
+  margin-bottom: 32px;
+}
+
+.filter-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.filter-option:hover {
+  background: #e8f5e8;
+  border-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+}
+
+.filter-option input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.filter-option input[type="checkbox"]:checked + .checkmark {
+  background: #27ae60;
+  border-color: #27ae60;
+}
+
+.filter-option input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.option-text {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.allergen-filters {
+  margin-bottom: 32px;
+}
+
+.allergen-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.allergen-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.allergen-checkbox {
+  display: none;
+}
+
+.allergen-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.allergen-option:hover .allergen-pill {
+  background: #fff5f5;
+  border-color: #e74c3c;
+  color: #c0392b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.15);
+}
+
+.allergen-option .allergen-checkbox:checked + .allergen-pill {
+  background: #e74c3c;
+  border-color: #c0392b;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.allergen-option .allergen-checkbox:checked + .allergen-pill::after {
+  content: '×';
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.allergen-hint {
+  display: block;
+  margin-top: 8px;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid #ecf0f1;
+}
+
+/* Controls and search */
+.controls:focus-within {
+  box-shadow: 0 6px 32px 0 rgba(225,112,26,0.13), 0 2px 12px 0 rgba(234,193,122,0.13);
+}
+
+.controls input[type="search"],
+.controls input[type="text"],
+#search {
+  padding: 14px 22px;
+  border-radius: 9px;
+  border: 1.5px solid #eac17a;
+  width: 100%;
+  max-width: 600px;
+  background: #fdf6e9;
+  font-size: 1.13rem;
+  margin-left: 22px;
+  box-shadow: 0 1.5px 6px 0 rgba(234,193,122,0.08);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.controls input[type="search"]:focus,
+.controls input[type="text"]:focus,
+#search:focus {
+  border: 1.5px solid #e1701a;
+  outline: none;
+  box-shadow: 0 2px 12px 0 rgba(225,112,26,0.10);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: center;
+  min-width: 320px;
+}
+
+.filters label {
+  font-size: 1.04rem;
+  color: #a67c1a;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+select[multiple] {
+  min-width: 100px;
+  min-height: 60px;
+  border-radius: 8px;
+  border: 1.5px solid #eac17a;
+  padding: 6px 10px;
+  background: #fdf6e9;
+  font-size: 1.05rem;
+  color: #a67c1a;
+  box-shadow: 0 1.5px 6px 0 rgba(234,193,122,0.08);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+select[multiple]:focus {
+  border: 1.5px solid #e1701a;
+  outline: none;
+  box-shadow: 0 2px 12px 0 rgba(225,112,26,0.10);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .filters-container {
+    padding: 24px 20px;
+  }
+  
+  .filter-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .filter-option {
+    justify-content: flex-start;
+  }
+  
+  .allergen-options {
+    gap: 8px;
+  }
+  
+  .allergen-pill {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .filter-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .filters-container {
+    padding: 20px 16px;
+  }
+  
+  .filters-title {
+    font-size: 1.3rem;
+  }
+  
+  .filter-category {
+    font-size: 1rem;
+  }
+  
+  .filter-option {
+    padding: 10px 12px;
+  }
+  
+  .allergen-options {
+    gap: 6px;
+  }
+  
+  .allergen-pill {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}

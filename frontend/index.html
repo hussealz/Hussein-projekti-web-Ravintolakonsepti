@@ -3,29 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mood_Corridor</title>
+  <title>Apricus Kahvila & Ravintola</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#c0392b">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/filters.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="icon" type="image/png" href="assets/img/logo.png">
 </head>
-<body dir="rtl" class="page">
+<body dir="ltr" class="page">
   <header class="custom-header">
+    <div class="header-logo-brand">
+      <img src="assets/img/logo.png" alt="Logo" class="header-logo" />
+      <span class="header-brand">Apricus</span>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link active">Etusivu</a>
+      <a href="#about" class="nav-link">Tietoa</a>
+      <a href="menu.html" class="nav-link">Ruokalista</a>
+    
+    </nav>
     <div class="header-actions">
-    <div class="search-box">
-  <input type="text" id="headerSearch" placeholder="Hae ruokalajia..." />
-        <span class="search-icon">
-          <svg width="20" height="20" fill="none" stroke="#e1701a" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </span>
-      </div>
-  <div class="icon-btn cart-btn" id="btnCart">
+            <div class="search-box">
+              <input type="text" id="headerSearch" placeholder="Hae ruokalajia..." aria-label="Hae ruokalajia" />
+              <span class="search-icon">
+                <svg width="20" height="20" fill="none" stroke="#e1701a" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </span>
+              <div class="search-dropdown" id="searchDropdown">
+                <!-- Search results will be populated here -->
+              </div>
+            </div>
+      <div class="icon-btn cart-btn" id="btnCart">
         <svg width="22" height="22" fill="none" stroke="#e1701a" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         <span class="cart-badge" id="cartCount">0</span>
       </div>
       <div class="icon-btn fav-btn" id="btnFavorites">
         <svg width="22" height="22" fill="none" stroke="#e1701a" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
       </div>
-  <div class="icon-btn login-btn" id="btnLogin" title="Kirjaudu / Rekisteröidy">
+      <div class="icon-btn login-btn" id="btnLogin" title="Kirjaudu / Rekisteröidy">
         <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="userGradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
@@ -38,12 +60,12 @@
           <path d="M36 38c0-6-5.37-10-12-10s-12 4-12 10" fill="#fff"/>
         </svg>
         <div id="authDropdown" class="auth-dropdown" style="display:none;">
-          <form id="authForm" style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;min-width:220px;padding:12px 8px;">
-            <input id="authName" placeholder="Nimi (rekisteröinti)" />
-            <input id="authEmail" placeholder="Sähköposti" />
-            <input id="authPassword" type="password" placeholder="Salasana" />
-            <label style="font-size:0.95em"><input type="checkbox" id="authStudent" /> Opiskelija (alennus)</label>
-            <div style="display:flex;gap:6px;justify-content:flex-end;width:100%">
+          <form id="authForm" style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-width:220px;padding:12px 8px;">
+            <input id="authName" type="text" placeholder="Nimi (rekisteröinti)" aria-label="Nimi" />
+            <input id="authEmail" type="email" placeholder="Sähköposti" aria-label="Sähköposti" />
+            <input id="authPassword" type="password" placeholder="Salasana" aria-label="Salasana" />
+            <label style="font-size:0.95em"><input type="checkbox" id="authStudent" aria-label="Opiskelija-alennus" /> Opiskelija (alennus)</label>
+            <div style="display:flex;gap:6px;justify-content:flex-start;width:100%">
               <button type="button" id="btnDoLogin" class="btn">Kirjaudu</button>
               <button type="button" id="btnRegister" class="btn">Rekisteröidy</button>
             </div>
@@ -52,24 +74,12 @@
       </div>
       <div class="user-info" id="userInfo" style="display:none">
         <span id="userName" style="font-weight:bold;color:#e1701a"></span>
-        <button id="btnLogout" class="btn" style="margin-right:8px;padding:4px 12px;font-size:0.95em">Kirjaudu ulos</button>
+        <button id="btnLogout" class="btn" style="margin-left:8px;padding:4px 12px;font-size:0.95em">Kirjaudu ulos</button>
       </div>
-    </div>
-    <nav class="header-nav">
-  <a href="#" class="nav-link">Etusivu</a>
-  <a href="#" class="nav-link">Tietoa</a>
-  <a href="#" class="nav-link">Ruokalista</a>
-  <a href="#" class="nav-link">Galleria</a>
-  <a href="#" class="nav-link">Blogi</a>
-  <a href="#" class="nav-link">Yhteystiedot</a>
-    </nav>
-    <div class="header-logo-brand">
-      <img src="assets/img/logo.png" alt="Logo" class="header-logo" />
-      <span class="header-brand">TK</span>
     </div>
   </header>
   <div class="header-image">
-  <img src="assets/img/Asil.jpg" alt="Tervetuloa kuva" class="hero-img" />
+  <img src="assets/img/Asil.jpg" alt="Apricus ravintolan sisätila" class="hero-img" />
     <div class="hero-text">
   <h1>Apricus</h1>
   <h2>Kahvila & Ravintola</h2>
@@ -80,34 +90,215 @@
    
   </header>
 
-
-
   <main class="container">
-    <section class="controls">
-  <div class="filters new-filters">
-    <div class="filter-group">
-      <label class="filter-label"><input type="checkbox" id="filter-vegan" /> Vegaani</label>
-      <label class="filter-label"><input type="checkbox" id="filter-gluten" /> Gluteeniton</label>
-      <label class="filter-label"><input type="checkbox" id="filter-lactose" /> Laktoositon</label>
-    </div>
-    <div class="filter-group">
-      <label class="filter-label">Poista allergeenit:
-        <select id="exclude-allergens" multiple>
-          <option value="nuts">Pähkinät</option>
-          <option value="fish">Kala</option>
-          <option value="milk">Maito</option>
-          <option value="eggs">Kananmuna</option>
-        </select>
-      </label>
-    </div>
-    <button id="applyFilters" class="btn filter-btn">Käytä</button>
-  </div>
-</section>
+    <section class="filters-section">
+      <div class="filters-container">
+        <h3 class="filters-title">Suodata ruokalistaa</h3>
+        
+        <div class="dietary-filters">
+          <h4 class="filter-category">Ruokavalio</h4>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" id="filter-vegan" />
+              <span class="checkmark"></span>
+              <span class="option-text">Vegaani</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" id="filter-gluten" />
+              <span class="checkmark"></span>
+              <span class="option-text">Gluteeniton</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" id="filter-lactose" />
+              <span class="checkmark"></span>
+              <span class="option-text">Laktoositon</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="allergen-filters">
+          <h4 class="filter-category">Allergeenit</h4>
+          <div class="allergen-options">
+            <label class="allergen-option" data-allergen="nuts">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Pähkinät</span>
+            </label>
+            <label class="allergen-option" data-allergen="fish">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Kala</span>
+            </label>
+            <label class="allergen-option" data-allergen="milk">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Maito</span>
+            </label>
+            <label class="allergen-option" data-allergen="eggs">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Kananmuna</span>
+            </label>
+            <label class="allergen-option" data-allergen="soy">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Soija</span>
+            </label>
+            <label class="allergen-option" data-allergen="gluten">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Gluteeni</span>
+            </label>
+            <label class="allergen-option" data-allergen="sesame">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Seesami</span>
+            </label>
+            <label class="allergen-option" data-allergen="shellfish">
+              <input type="checkbox" class="allergen-checkbox" />
+              <span class="allergen-pill">Äyriäiset</span>
+            </label>
+          </div>
+          <small class="allergen-hint">Valitse allergeenit jotka haluat välttää</small>
+        </div>
+
+        <div class="filter-actions">
+          <button id="applyFilters" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3"></polygon>
+            </svg>
+            Käytä suodattimet
+          </button>
+          <button id="clearFilters" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            Tyhjennä
+          </button>
+        </div>
+      </div>
+    </section>
 
     <section id="promotions" class="promotions"></section>
 
-    <section id="menu" class="menu-grid" aria-live="polite">
-      <!-- Dishes will be rendered here -->
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-header">
+          <h2 class="about-title">Tervetuloa Apricukseen</h2>
+          <p class="about-subtitle">Autenttista ruokaa ja lämmintä palvelua sydämen pohjalta</p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-story">
+            <h3>Tarinaamme</h3>
+            <p>Apricus Kahvila & Ravintola on perustettu vuonna 2020 tuomaan kaupunkilaisille autenttista, tuoretta ruokaa ja rentoa kahvila-henkeä. Nimi "Apricus" tulee latinan sanasta "aurinkoinen" - ja juuri sitä me haluamme olla: paikka, jossa aurinko paistaa ja hyvä olo leviää.</p>
+            <p>Kokkimme valmistavat jokaisen annoksen raaka-aineista, jotka valitsemme huolella paikallisilta tuottajilta. Uskomme, että hyvä ruoka yhdistää ihmisiä ja luo muistoja, jotka kestävät elämän.</p>
+          </div>
+
+          <div class="about-values">
+            <h3>Arvomme</h3>
+            <div class="values-grid">
+              <div class="value-item">
+                <div class="value-icon">🌱</div>
+                <h4>Kestävyys</h4>
+                <p>Käytämme paikallisia, kestävästi tuotettuja raaka-aineita</p>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">❤️</div>
+                <h4>Palvelu</h4>
+                <p>Lämmin, henkilökohtainen palvelu on meille tärkeää</p>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">🎨</div>
+                <h4>Luovuus</h4>
+                <p>Uudistamme jatkuvasti menua ja tarjoamme uusia makuja</p>
+              </div>
+              <div class="value-item">
+                <div class="value-icon">🤝</div>
+                <h4>Yhteisö</h4>
+                <p>Olemme osa paikallista yhteisöä ja tuemme sitä</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-team">
+            <h3>Tiimimme</h3>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="assets/img/placeholder.jpg" alt="Pääkokki" />
+                </div>
+                <h4>Adam Kurdi</h4>
+                <p class="member-role">Pääkokki</p>
+                <p class="member-bio">15 vuoden kokemus autenttisesta ruoanlaitosta. Erikoistunut Lähi-idän ja välimeren keittiöön.</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="assets/img/placeholder.jpg" alt="Kahvila-asiantuntija" />
+                </div>
+                <h4>Layla Hassan</h4>
+                <p class="member-role">Kahvila-asiantuntija</p>
+                <p class="member-bio">Kahvin ja leipomotuotteiden asiantuntija. Luo jokaisen päivän upeita makuja ja autenttisia juomia.</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="assets/img/placeholder.jpg" alt="Ravintolapäällikkö" />
+                </div>
+                <h4>Omar Rashid</h4>
+                <p class="member-role">Ravintolapäällikkö</p>
+                <p class="member-bio">Varmistaa, että jokainen vierailu on unohtumaton kokemus ja asiakkaat tuntevat itsensä tervetulleiksi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-location">
+            <h3>Sijaintimme</h3>
+            <div class="location-info">
+              <div class="location-details">
+                <div class="location-item">
+                  <strong>Osoite:</strong>
+                  <p>Urho Kekkosen katu 1<br>00100 Helsinki</p>
+                </div>
+                <div class="location-item">
+                  <strong>Aukioloajat:</strong>
+                  <p>Ma-Pe: 7:00-20:00<br>La: 9:00-18:00<br>Su: 10:00-16:00</p>
+                </div>
+                <div class="location-item">
+                  <strong>Yhteystiedot:</strong>
+                  <p>Puhelin: +358 40 123 4567<br>Sähköposti: info@apricus.fi</p>
+                </div>
+              </div>
+              <div class="location-map">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.123456789!2d24.9331!3d60.1699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bc8b8b8b8b8%3A0x1234567890abcdef!2sUrho%20Kekkosen%20katu%201%2C%2000100%20Helsinki!5e0!3m2!1sfi!2sfi!4v1234567890123!5m2!1sfi!2sfi"
+                  width="100%" 
+                  height="300" 
+                  style="border:0; border-radius: 12px;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Apricus Kahvila & Ravintola sijainti">
+                </iframe>
+                <div class="map-actions">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Urho+Kekkosen+katu+1+Helsinki" 
+                     target="_blank" 
+                     class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Avaa Google Mapsissa
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2 class="section-title">Tämän päivän ruokalista</h2>
+        <div class="menu-grid" aria-live="polite">
+          <!-- Dishes will be rendered here -->
+        </div>
+      </div>
     </section>
   </main>
 
@@ -127,28 +318,33 @@
     <div id="favList"></div>
   </aside>
 
-  <!-- Login modal -->
-
-  
+  <footer class="footer">
     <div class="footer-content">
-      <div class="footer-info">
-        <h3>Apricus Kahvila & Ravintola</h3>
-        <p>Aukioloajat: 10:00–23:00</p>
-       <div>Osoite: Makuja-katu 12, Kaupunki</div>
-  <div><button id="btnDirections" class="btn">Hae reittiohjeet</button></div>
+      <div class="footer-section">
+        <h3>Apricus</h3>
+        <p>Autenttista Lähi-idän ruokaa Helsingissä</p>
       </div>
-      <div class="footer-contact">
-        <p>Puhelin: <a href="tel:+358123456789">+358 12 345 6789</a></p>
-        <p>Sähköposti: <a href="mailto:info@apricus.fi">info@apricus.fi</a></p>
-        <div class="footer-social">
-          <a href="#" title="Instagram" class="social-icon">&#x1F4F7;</a>
-          <a href="#" title="Facebook" class="social-icon">&#x1F426;</a>
-        </div>
+      <div class="footer-section">
+        <h3>Yhteystiedot</h3>
+        <p>Osoite: Helsinki, Suomi</p>
+        <p>Puhelin: +358 40 123 4567</p>
+        <p>Sähköposti: info@apricus.fi</p>
+      </div>
+      <div class="footer-section">
+        <h3>Aukioloajat</h3>
+        <p>Ma-Pe: 11:00 - 22:00</p>
+        <p>La: 12:00 - 23:00</p>
+        <p>Su: 12:00 - 21:00</p>
       </div>
     </div>
     <div class="footer-bottom">&copy; 2025 Apricus. Kaikki oikeudet pidätetään.</div>
   </footer>
 
-  <script type="module" src="js/main.js"></script>
+  <!-- Main application scripts -->
+  <script type="module" src="js/main-new.js"></script>
+  <script type="module" src="js/search.js"></script>
+  <script type="module" src="js/filters.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="js/daily-menu.js"></script>
 </body>
 </html>

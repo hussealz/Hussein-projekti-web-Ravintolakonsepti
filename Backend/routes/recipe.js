@@ -2,12 +2,12 @@
 const express = require('express');
 const router = express.Router();
 
-// المسار الرئيسي
+// Main route
 router.get('/', (req, res) => {
     res.send('Recipe API Endpoint');
 });
 
-// مسار قائمة اليوم
+// Today's menu route
 router.get('/menu/today', (req, res) => {
     res.json({
         menu: [

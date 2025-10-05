@@ -4,7 +4,7 @@ const router = express.Router();
 const { users, JWT_SECRET } = require('./shared');
 const jwt = require('jsonwebtoken');
 
-// تسجيل دخول
+// User login
 router.post('/', (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);

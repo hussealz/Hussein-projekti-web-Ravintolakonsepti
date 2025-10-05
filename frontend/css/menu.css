@@ -1,0 +1,390 @@
+/* Menu and Dish Card Styles */
+
+/* Menu tabs */
+.menu-tabs {
+  display: flex;
+  gap: 12px;
+}
+
+.menu-tab {
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.menu-tab.active {
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.menu-tab:hover:not(.active) {
+  background: #fbeee7;
+  color: var(--accent);
+}
+
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* Dish cards */
+.dish {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dish:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.dish img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.dish h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.dish p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  background: #e8f5e8;
+  color: #27ae60;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.badge.vegan {
+  background: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
+}
+
+.badge.gluten-free {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.badge.lactose-free {
+  background: rgba(155, 89, 182, 0.1);
+  color: #9b59b6;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e1701a;
+}
+
+.dish .btn {
+  background: linear-gradient(135deg, #e1701a, #f39c12);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.dish .btn:hover {
+  background: linear-gradient(135deg, #d35400, #e67e22);
+  transform: translateY(-1px);
+}
+
+/* Weekly Menu Styles */
+.weekly-menu-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 48px 32px;
+  border: 1px solid rgba(234, 193, 122, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.weekly-menu-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #e1701a, #eac17a);
+}
+
+.weekly-menu-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.weekly-menu-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #e1701a, #eac17a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.weekly-menu-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  font-weight: 400;
+}
+
+.weekly-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.day-menu-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 2px solid #f8f9fa;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.day-menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border-color: rgba(234, 193, 122, 0.3);
+}
+
+.day-menu-card.today {
+  border-color: #e1701a;
+  box-shadow: 0 4px 20px rgba(225, 112, 26, 0.2);
+}
+
+.day-menu-card.today::before {
+  content: 'TÄNÄÄN';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #e1701a, #eac17a);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.day-header {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.day-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+}
+
+.day-date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+  font-weight: 400;
+}
+
+.day-dishes {
+  padding: 20px;
+}
+
+.weekly-dish-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f3f4;
+  transition: all 0.2s ease;
+}
+
+.weekly-dish-item:last-child {
+  border-bottom: none;
+}
+
+.weekly-dish-item:hover {
+  background: rgba(234, 193, 122, 0.05);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0 -16px;
+}
+
+.weekly-dish-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 2px solid #f8f9fa;
+}
+
+.weekly-dish-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.weekly-dish-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.weekly-dish-description {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.weekly-dish-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.weekly-dish-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.weekly-dish-badge.vegan {
+  background: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
+}
+
+.weekly-dish-badge.gluten-free {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.weekly-dish-badge.lactose-free {
+  background: rgba(155, 89, 182, 0.1);
+  color: #9b59b6;
+}
+
+.weekly-dish-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e1701a;
+  flex-shrink: 0;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .weekly-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .weekly-menu-container {
+    padding: 32px 20px;
+  }
+  
+  .weekly-menu-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dish {
+    padding: 16px;
+  }
+  .dish img {
+    height: 150px;
+  }
+  
+  .weekly-menu-container {
+    padding: 24px 16px;
+  }
+  
+  .weekly-menu-title {
+    font-size: 1.8rem;
+  }
+  
+  .weekly-dish-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .weekly-dish-img {
+    width: 100%;
+    height: 120px;
+  }
+  
+  .weekly-dish-info {
+    width: 100%;
+  }
+  
+  .weekly-dish-price {
+    align-self: flex-end;
+  }
+}
